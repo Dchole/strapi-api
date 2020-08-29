@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "name": "Transactions"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "pizzas": {
+      "collection": "pizza"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "transaction"
+    },
+    "paymentMethod": {
+      "type": "enumeration",
+      "enum": [
+        "MOBILE_MONEY",
+        "CREDIT_CARD"
+      ],
+      "required": true
+    }
+  }
+}

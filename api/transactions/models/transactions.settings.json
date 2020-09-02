@@ -13,9 +13,9 @@
       "collection": "pizza"
     },
     "user": {
+      "via": "transaction",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "transaction"
+      "model": "user"
     },
     "paymentMethod": {
       "type": "enumeration",

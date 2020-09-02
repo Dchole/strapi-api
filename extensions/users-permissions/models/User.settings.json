@@ -19,7 +19,7 @@
     "email": {
       "type": "email",
       "minLength": 6,
-      "configurable": true,
+      "configurable": false,
       "required": true
     },
     "provider": {
@@ -63,15 +63,27 @@
       "collection": "pizza"
     },
     "transaction": {
-      "via": "user",
-      "model": "transactions"
+      "model": "transactions",
+      "via": "user"
     },
     "profilePhoto": {
       "model": "file",
       "via": "related",
-      "allowedTypes": ["images"],
+      "allowedTypes": [
+        "images"
+      ],
       "plugin": "upload",
       "required": false
+    },
+    "localAddress": {
+      "type": "string",
+      "private": false,
+      "required": true
+    },
+    "tokenVersion": {
+      "default": 0,
+      "private": true,
+      "type": "integer"
     }
   }
 }
